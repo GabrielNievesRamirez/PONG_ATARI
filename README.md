@@ -2,6 +2,9 @@
 
 Este es un juego de Pong desarrollado en HTML, CSS y JavaScript.
 
+![escenario.jpeg](https://raw.githubusercontent.com/GabrielNievesRamirez/PONG_ATARI/ef49b27af8f9d52551f5db46710821f7e2ccc2b5/escenario.jpeg)
+
+
 ## Descripción
 
 PONG es un juego clásico de tenis de mesa, donde dos jugadores controlan palas para golpear una pelota y marcar puntos.
