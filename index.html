@@ -279,7 +279,7 @@
         Resetear() {
             this.x = parseInt(getComputedStyle(this.elem).left);
             this.y = parseInt(getComputedStyle(this.elem).bottom);
-            this.vel = 300;
+            this.vel = 300; // Ajusta la velocidad inicial aquí si es necesario
         }
     }
 
@@ -321,6 +321,15 @@
                 return 1;
             }
             return 0;
+        }
+
+        Resetear(velInicial, posX, posY, dirX, dirY) {
+            super.Resetear();
+            this.vel = velInicial;
+            this.x = posX;
+            this.y = posY;
+            this.dirX = dirX;
+            this.dirY = dirY;
         }
     }
 
@@ -381,9 +390,9 @@
     var estilos = ["tecno", "florido", "neon", "loco"];
     var bordesTablero = new Bordes(0, 800, 0, 600);
     var dir = Math.random() * 2 * Math.PI;
-    var pelota = new Pelota(bordesTablero, document.querySelector(".pelota"), 300, Math.cos(dir), Math.sin(dir), 0.1);
-    var pala1 = new Pala(bordesTablero, document.querySelector(".pala1"), 300, 1.15, "a", "z");
-    var pala2 = new Pala(bordesTablero, document.querySelector(".pala2"), 300, 1.15, "ArrowUp", "ArrowDown");
+    var pelota = new Pelota(bordesTablero, document.querySelector(".pelota"), 200, Math.cos(dir), Math.sin(dir), 0.1);
+    var pala1 = new Pala(bordesTablero, document.querySelector(".pala1"), 200, 1.15, "a", "z");
+    var pala2 = new Pala(bordesTablero, document.querySelector(".pala2"), 200, 1.15, "ArrowUp", "ArrowDown");
     var marcador1 = new Marcador(document.querySelector(".marcador1"));
     var marcador2 = new Marcador(document.querySelector(".marcador2"));
 
@@ -394,7 +403,7 @@
         pala1.Resetear();
         pala2.Resetear();
         var dir = Math.random() * 2 * Math.PI;
-        pelota.Resetear(Math.random() * 150 + 250, 400, 300, Math.cos(dir), Math.sin(dir));
+        pelota.Resetear(200, 400, 300, Math.cos(dir), Math.sin(dir));
     }
 
     function Update() {
